@@ -6,7 +6,7 @@ import "../styles/main.less"
 
 const Arroz = (props) => {
     return (
-    <div>Arroz <b>{props.marca}</b> do tipo <span className={props.marca === "Cigala" ? "green" : "orange"}> {props.tipo} </span></div>
+    <div>Arroz<b>{props.marca}</b>do tipo <span className={props.marca === "Cigala" ? "green" : "orange"}> {props.tipo} </span></div>
     );
 
 };

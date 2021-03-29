@@ -1,27 +1,53 @@
 .orange {
-    color: orange; 
+  color: orange;
 }
 
 .green {
-    color: green; 
+  color: green;
 }
 
 .brown {
-    color: brown; 
+  color: brown;
 }
 
 .yellow {
-    color: rgb(187, 187, 53); 
+  color: rgb(187, 187, 53);
 }
 
 .blue {
-    color: blue;
+  color: blue;
 }
 
-.red{
-    color: red; 
+.red {
+  color: red;
 }
 
-.prato{
-    margin-bottom:60px; 
+.prato {
+  margin-bottom: 60px;
+}
+
+* {
+  padding: 5px;
+}
+
+.menu {
+  background: #ddd;
+  height: 0;
+  left: 0;
+  opacity: 0;
+  position: absolute;
+  transition: all 0.5s ease;
+  top: 35px;
+  width: 100%;
+}
+
+menu :focus {
+  height: 200px;
+  opacity: 1;
+  transform: translateY(100);
+}
+
+body {
+  background-color: #000000;
+  color: #ffffff;
 }

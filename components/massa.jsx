@@ -7,8 +7,9 @@ import "../styles/main.less"
 
 /* classe yellow */ 
 const Massa = (props) => {
+    const {integral} = props
     return (
-        <div className="yellow"> Massa {props.integral=="integral"?"integral" : ""} do tipo {props.tipo} </div>
+        <div className="yellow"> Massa {integral ? "integral" : ""} </div>
     );
 
 };

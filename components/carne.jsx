@@ -14,9 +14,11 @@ import "../styles/main.less"
 
 // 200g de carne de Novilho (a castanho, classe brown)
 
+const meetPlate = ["Novilho", "Vaca", "Porco", "Frango", "Perú"];
+
 const Carne = (props) => {
     return (
-        <div className = "brown">{props.peso}g de carne de {props.tipo}.</div>
+        <div className = "brown">{props.peso}g de carne de {meetPlate[props.index]}.</div>
     );
 
 };
