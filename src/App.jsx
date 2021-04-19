@@ -5,27 +5,20 @@ import Dropdown from "./components/dropdown.jsx"
 import GlobalStyle from "./global-styles";
 import { connect } from "react-redux";
 import {selectWeekDay} from "./redux/actions"
-
-
-
 const diasDaSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"];
 const tipoPratos = ["Carne", "Peixe", "Vegan"];
 const tiposBebidas = ["Agua Natural", "Agua das Pedras", "Kumo kiwi", "Sumo morango", "Sumo ananás", "Sumo laranja"];
 const tiposAcompanhamentos = ["Massa", "Massa Integral", "Arroz", "Salada Russa", "Salada Ibérica"];
-
 const initialState = {
     diaSemana: diasDaSemana[0],
     tipoPrato: tipoPratos[0],
     tipoBebida: tiposBebidas[0],
     tipoAcompanhamento: tiposAcompanhamentos[0],
 }
-
+const oldReducer = (state) => state
 const App = (props) => {
-
     const {weekDay, selectWeekDay} = props
-
-    const [state, dispatch] = useReducer(reducer, initialState);
-
+    const [state, dispatch] = useReducer(oldReducer, initialState);
     return (
         <>
             <GlobalStyle />
@@ -72,14 +65,8 @@ const App = (props) => {
                 tipoBebida={state.tipoBebida}>
             </Prato>
         </>
-
     )
 };
-
-
 const mapStateToProps = (state) => ({weekDay: state.weekDay})
-
 const mapDispatchToProps =  ({selectWeekDay: (item) => selectWeekDay(item)})
-
-
 export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App));
