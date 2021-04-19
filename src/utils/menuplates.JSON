@@ -1,0 +1,44 @@
+{
+    "Segunda": {
+        "carne": "empadão",
+        "peixe": "salmão",
+        "vegan": "cebolas recheadas",
+        "sobremesa": "mousse de chocolate"
+    },
+    "Terça": {
+        "carne": "lombinhos de porco",
+        "peixe": "rissois de peixe",
+        "vegan": "esparguete com feijões e tomate",
+        "sobremesa": "tiramisu"
+    },
+    "Quarta": {
+        "carne": "frango",
+        "peixe": "bacalhau",
+        "vegan": "sopa de agrião",
+        "sobremesa": "molotof"
+    },
+    "Quinta": {
+        "carne": "costeletas",
+        "peixe": "redfish",
+        "vegan": "bolonhesa de lentilhas",
+        "sobremesa": "cheesecake"
+    },
+    "Sexta": {
+        "carne": "bife de perú",
+        "peixe": "pescada",
+        "vegan": "caril de grão e legumes",
+        "sobremesa": "brownies"
+    },
+    "Sabado": {
+        "carne": "francesinha",
+        "peixe": "polvo",
+        "vegan": "salada de quinoa",
+        "sobremesa": "mousse de café"
+    },
+    "Domingo": {
+        "carne": "pato assado",
+        "peixe": "arroz de tamboril",
+        "vegan": "paella de legumes",
+        "sobremesa": "éclairs"
+    }
+}

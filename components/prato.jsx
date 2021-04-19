@@ -17,8 +17,8 @@ const functionWithRegex = () => {
 
 
 const Prato = (props) => {
+    
     const {tipo, peso ,acompanhamento , bebida} = props 
-
     const [sideDish, setSideDish] = useState (null)
     const [sideDishType, setSideDishType] = useState (null)
 

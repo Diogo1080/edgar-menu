@@ -1,32 +1,85 @@
-import React, {useState} from "react";
+import React, { useState, useReducer } from "react";
 import { hot } from "react-hot-loader";
-import Prato  from "../components/prato.jsx"
-import Dropdown from "../components/dropdown.jsx"
+import Prato from "./components/prato.jsx"
+import Dropdown from "./components/dropdown.jsx"
+import GlobalStyle from "./global-styles";
+import { connect } from "react-redux";
+import {selectWeekDay} from "./redux/actions"
 
 
-const daysOfWeek = ["segunda", "terça", "quarta", "quinta", "sexta","sabado", "domingo"] 
-const plateTypes = ["carne", "peixe", "vegan"]
-const drinkTypes = ["agua natural", "agua das pedras", "sumo kiwi", "sumo morango", "sumo ananás", "sumo laranja"]
-const sideDishTypes = ["Massa", "Massa Integral", "Arroz", "Salada Russa", "Salada Ibérica"]
 
-const App = () => {
-    const [dayOfWeek, setDaysOfWeek] = useState(daysOfWeek[0])
-    const [plateType, setPlateType] = useState(plateTypes[0])
-    const [drinkType, setDrinkType] = useState(drinkTypes[0])
-    const [sideDishType, setSideDishType] = useState(sideDishTypes[0])
-    return(
+const diasDaSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"];
+const tipoPratos = ["Carne", "Peixe", "Vegan"];
+const tiposBebidas = ["Agua Natural", "Agua das Pedras", "Kumo kiwi", "Sumo morango", "Sumo ananás", "Sumo laranja"];
+const tiposAcompanhamentos = ["Massa", "Massa Integral", "Arroz", "Salada Russa", "Salada Ibérica"];
+
+const initialState = {
+    diaSemana: diasDaSemana[0],
+    tipoPrato: tipoPratos[0],
+    tipoBebida: tiposBebidas[0],
+    tipoAcompanhamento: tiposAcompanhamentos[0],
+}
+
+const App = (props) => {
+
+    const {weekDay, selectWeekDay} = props
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+
+    return (
         <>
-            <Dropdown name="dayOfWeek" className="menu" label="Escolha o dia da semana:" selected={dayOfWeek} options={daysOfWeek} handleChange={(item) => setDaysOfWeek(item)}></Dropdown>
+            <GlobalStyle />
+            <Dropdown 
+                name="diaSemana"
+                className="menu"
+                label="Escolha o dia da semana:"
+                selected={weekDay}
+                options={diasDaSemana}
+                handleChange={(item) => { selectWeekDay(item)}}>
+            </Dropdown>
             <br></br>
-            <Dropdown name="tipo" className="menu" label="Escolha o prato:" selected={plateType} options={plateTypes} handleChange={(item) => setPlateType(item)}></Dropdown>
+            <Dropdown  // Samuel e o Daniel
+                name="tipoPrato"
+                className="menu"
+                label="Escolha o prato:"
+                selected={state.tipoPrato}
+                options={tipoPratos}
+                handleChange={(item) => { dispatch({ type: 'tipoPrato', value: item }) }}>
+            </Dropdown>~
             <br></br>
-            <Dropdown name="drink" className="menu" label="Escolha a bebida:" selected={drinkType} options={drinkTypes} handleChange={(item) => setDrinkType(item)}></Dropdown>
+            <Dropdown  // Luis e o Tojo
+                name="bebida"
+                className="menu"
+                label="Escolha a bebida:"
+                selected={state.tipoBebida}
+                options={tiposBebidas}
+                handleChange={(item) => { dispatch({ type: 'tipoBebida', value: item }) }}>
+            </Dropdown>
             <br></br>
-            <Dropdown name="acompanhemtos" className="menu" label="Escolha o acompanhamento:" selected={sideDishType} options={sideDishTypes} handleChange={(item) => setSideDishType(item)}></Dropdown>
-            <Prato tipo={plateType} peso="1000" acompanhamento={sideDishType} bebida={drinkType}></Prato>
+            <Dropdown // Diogo e Victor
+                name="acompanhemto"
+                className="menu"
+                label="Escolha o acompanhamento:"
+                selected={state.tipoAcompanhamento}
+                options={tiposAcompanhamentos}
+                handleChange={(item) => { dispatch({ type: 'tipoAcompanhamento', value: item }) }}>
+            </Dropdown>
+            <Prato
+                tipoPrato={state.tipoPrato}
+                peso="1000"
+                tipoAcompanhamento={state.tipoAcompanhamento}
+                diaSemana={state.diaSemana}
+                tipoBebida={state.tipoBebida}>
+            </Prato>
         </>
+
     )
 };
 
 
-export default hot(module)(App);
+const mapStateToProps = (state) => ({weekDay: state.weekDay})
+
+const mapDispatchToProps =  ({selectWeekDay: (item) => selectWeekDay(item)})
+
+
+export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App));
