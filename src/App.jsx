@@ -5,6 +5,7 @@ import Dropdown from "./components/dropdown.jsx"
 import GlobalStyle from "./global-styles";
 import { connect } from "react-redux";
 import {selectWeekDay} from "./redux/actions"
+import { selectDrinkType } from "./redux/actions"
 const diasDaSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"];
 const tipoPratos = ["Carne", "Peixe", "Vegan"];
 const tiposBebidas = ["Agua Natural", "Agua das Pedras", "Kumo kiwi", "Sumo morango", "Sumo ananás", "Sumo laranja"];
@@ -18,6 +19,7 @@ const initialState = {
 const oldReducer = (state) => state
 const App = (props) => {
     const {weekDay, selectWeekDay} = props
+    const {drinkType, selectDrinkType} = props
     const [state, dispatch] = useReducer(oldReducer, initialState);
     return (
         <>
@@ -44,9 +46,9 @@ const App = (props) => {
                 name="bebida"
                 className="menu"
                 label="Escolha a bebida:"
-                selected={state.tipoBebida}
+                selected={drinkType}
                 options={tiposBebidas}
-                handleChange={(item) => { dispatch({ type: 'tipoBebida', value: item }) }}>
+                handleChange={(item) => { selectDrinkType(item)}}>
             </Dropdown>
             <br></br>
             <Dropdown // Diogo e Victor
@@ -67,6 +69,8 @@ const App = (props) => {
         </>
     )
 };
-const mapStateToProps = (state) => ({weekDay: state.weekDay})
-const mapDispatchToProps =  ({selectWeekDay: (item) => selectWeekDay(item)})
+const mapStateToProps = (state) => ({weekDay: state.weekDay,
+                                    drinkType: state.drinkType})
+const mapDispatchToProps =  ({selectWeekDay: (item) => selectWeekDay(item),
+                                selectDrinkType: (item) => selectDrinkType(item)})
 export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App));
