@@ -4,8 +4,9 @@ import Prato from "./components/prato.jsx"
 import Dropdown from "./components/dropdown.jsx"
 import GlobalStyle from "./global-styles";
 import { connect } from "react-redux";
-import {selectWeekDay} from "./redux/actions"
+import {selectSideDish, selectWeekDay} from "./redux/actions"
 import { selectDrinkType } from "./redux/actions"
+
 const diasDaSemana = ["Segunda", "Terça", "Quarta", "Quinta", "Sexta", "Sabado", "Domingo"];
 const tipoPratos = ["Carne", "Peixe", "Vegan"];
 const tiposBebidas = ["Agua Natural", "Agua das Pedras", "Kumo kiwi", "Sumo morango", "Sumo ananás", "Sumo laranja"];
@@ -20,6 +21,7 @@ const oldReducer = (state) => state
 const App = (props) => {
     const {weekDay, selectWeekDay} = props
     const {drinkType, selectDrinkType} = props
+    const {sideDish, selectSideDish} = props
     const [state, dispatch] = useReducer(oldReducer, initialState);
     return (
         <>
@@ -55,9 +57,9 @@ const App = (props) => {
                 name="acompanhemto"
                 className="menu"
                 label="Escolha o acompanhamento:"
-                selected={state.tipoAcompanhamento}
+                selected={sideDish}
                 options={tiposAcompanhamentos}
-                handleChange={(item) => { dispatch({ type: 'tipoAcompanhamento', value: item }) }}>
+                handleChange={(item) => { selectSideDish(item) }}>
             </Dropdown>
             <Prato
                 tipoPrato={state.tipoPrato}
@@ -69,8 +71,16 @@ const App = (props) => {
         </>
     )
 };
-const mapStateToProps = (state) => ({weekDay: state.weekDay,
-                                    drinkType: state.drinkType})
-const mapDispatchToProps =  ({selectWeekDay: (item) => selectWeekDay(item),
-                                selectDrinkType: (item) => selectDrinkType(item)})
+const mapStateToProps = (state) => ({
+    weekDay: state.weekDay,
+    drinkType: state.drinkType,
+    sideDish: state.sideDish
+})
+
+const mapDispatchToProps =  ({
+    selectWeekDay: (item) => selectWeekDay(item),
+    selectDrinkType: (item) => selectDrinkType(item),
+    selectSideDish: (item) => selectSideDish(item)
+})
+
 export default hot(module)(connect(mapStateToProps, mapDispatchToProps)(App));
