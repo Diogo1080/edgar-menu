@@ -1,0 +1,102 @@
+{
+    "pokemons": [
+        {
+            "name": "Pikachu",
+            "type": "Electric",
+            "description": "Pikachu that can generate powerful electricity have cheek sacs that are extra soft and super stretchy.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/25.gif",
+            "hp": 200,
+            "attack": 35,
+            "defense": 20,
+            "spAttack": 60,
+            "spDefense": 40,
+            "speed": 7,
+            "height": 12,
+            "weight": 9
+        },
+        {
+            "name": "Charizard",
+            "type": "Fire",
+            "description": "It spits fire that is hot enough to melt boulders. It may cause forest fires by blowing flames.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/6.gif",
+            "hp": 235,
+            "attack": 20,
+            "defense": 18,
+            "spAttack": 90,
+            "spDefense": 30,
+            "speed": 12,
+            "height": 30,
+            "weight": 8
+        },
+        {
+            "name": "Pidgey",
+            "type": "Fly",
+            "description": "Very docile. If attacked, it will often kick up sand to protect itself rather than fight back.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/16.gif",
+            "hp": 170,
+            "attack": 20,
+            "defense": 17,
+            "spAttack": 30,
+            "spDefense": 10,
+            "speed": 8,
+            "height": 13,
+            "weight": 10
+        },
+        {
+            "name": "Dragonite",
+            "type": "Fire",
+            "description": "It’s a kindhearted Pokémon. If it spots a drowning person or Pokémon, Dragonite simply must help them.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/149.gif",
+            "hp": 270,
+            "attack": 10,
+            "defense": 25,
+            "spAttack": 40,
+            "spDefense": 20,
+            "speed": 3,
+            "height": 7,
+            "weight": 463
+        },
+        {
+            "name": "Squirtle",
+            "type": "Water",
+            "description": "When it retracts its long neck into its shell, it squirts out water with vigorous force.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/7.gif",
+            "hp": 193,
+            "attack": 38,
+            "defense": 8,
+            "spAttack": 20,
+            "spDefense": 18,
+            "speed": 7,
+            "height": 12,
+            "weight": 9
+        },
+        {
+            "name": "Psyduck",
+            "type": "Water",
+            "description": "Psyduck is constantly beset by headaches. If the Pokémon lets its strange power erupt, apparently the pain subsides for a while.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/54.gif",
+            "hp": 260,
+            "attack": 40,
+            "defense": 18,
+            "spAttack": 43,
+            "spDefense": 10,
+            "speed": 8,
+            "height": 10,
+            "weight": 30
+        },
+        {
+            "name": "Golem",
+            "type": "Rock", 
+            "description": "Once it sheds its skin, its body turns tender and whitish. Its hide hardens when it’s exposed to air.",
+            "image": "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/versions/generation-v/black-white/animated/76.gif",
+            "hp": 310,
+            "attack": 30,
+            "defense": 5,
+            "spAttack": 32,
+            "spDefense": 10,
+            "speed": 8,
+            "height": 37,
+            "weight": 12
+        }
+    ]
+}
