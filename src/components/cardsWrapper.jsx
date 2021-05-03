@@ -1,6 +1,6 @@
 import React, { useContext } from "react"
 import PokemonContext from "../context"
-import pokemonList from "../pokemon.json"
+import pokemonList from "../utils/pokemon.json"
 import PokemonCard from "./card"
 
 

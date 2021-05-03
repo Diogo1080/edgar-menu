@@ -7,7 +7,7 @@ const PokemonCard = (props) => {
 
     const {description, type, name, hp, attack, defense, spAttack, spDefense, speed, height, weight, imageURL} = props; 
     return (
-    <>
+    <div>
         <div onClick={() => setOptionSelected(name)}
             className={`pokemon-card ${type.toLowerCase()} ${ name === optionSelected ? 'selected': ''}`} 
             id="pokemon-card">
@@ -83,7 +83,7 @@ const PokemonCard = (props) => {
                 </div>*/}
             </div>
         </div>
-    </>
+    </div>
     )
 }
 

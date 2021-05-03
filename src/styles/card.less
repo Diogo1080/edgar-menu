@@ -13,6 +13,9 @@
   .psychic {
     background: linear-gradient(140deg, #ffa7f9 0%, #ff2cc3 39%, #ffe3a7 100%);
   }
+  .fly{
+    background: linear-gradient(140deg, #b182ad 0%, rgba(159,159,159,1) 100%);
+  }
   .grass,
   .bug {
     background: linear-gradient(140deg, #c4da3d 0%, #6e7f0e 69%, #275009 100%);
@@ -84,7 +87,8 @@
   .pokemon-card-container{
     position:relative;
     background: rgba(253, 253, 253, 0.61);
-    border-radius :10px;
+    color: #000000;
+
   }
   .pokemon-card-stats{
     margin-top: 10px;
@@ -100,6 +104,10 @@
 
   .pokemon-card-title {
     font-family: "Open Sans Condensed", "Open Sans", helvetica, sans-serif;
+  }
+
+  .pokemon-card-table-stats{
+    margin-bottom: 20px;
   }
 
   table.pokemon-card-table-stats td{
@@ -155,4 +163,10 @@
     bottom:12px;
     left:60%;
   }
+
+  .pokemon-card.selected {
+    border: 3px solid white;
+  }
+
+
 

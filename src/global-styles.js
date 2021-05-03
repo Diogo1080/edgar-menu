@@ -3,9 +3,9 @@ import { createGlobalStyle } from 'styled-components';
 const GlobalStyle = createGlobalStyle`
 html,
 body {
-  background-color: #000000;
+  background-color: #333333;
   color: #ffffff;
-  padding: 5px;
+  padding: 0;
 }
 body {
     font-family: Gotham,Arial,Helvetica Neue,Helvetica,sans-serif;

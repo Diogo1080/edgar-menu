@@ -1,14 +1,20 @@
 import React, {useEffect, useState, useContext} from "react"
 import Dropdown from "./dropdown"
-import pokemonList from "../pokemon.json"
+import PokemonDescription from "./pokemonDescription"
+import pokemonList from "../utils/pokemon.json"
 import CardsWrapper from "./cardsWrapper"
 import PokemonContext from "../context"
 import Styled from "styled-components";
 
 
-const StyledMain = Styled.main`
-    background-color: #073642;
-    height:100vh;
+const Cards = Styled.main`
+    display: flex;
+    flex-flow: column wrap;
+
+`;
+const CardsChildren = Styled.div`
+    display: flex;
+    flex-flow: row wrap;
 `;
 
 function handlePokemonOptions(){
@@ -36,12 +42,18 @@ const PokemonPage = () => {
 
     return (
 
-            <StyledMain>
+            <Cards>
                 <Dropdown label="Pokemon List" selected={selectedType} options={pokemonsType} name="Pokemon Selector" handleChange={changeSelectedType}>
                 </Dropdown>
+               
+                
                 <CardsWrapper>
                 </CardsWrapper>
-            </StyledMain>
+               
+                <PokemonDescription>
+                </PokemonDescription>
+               
+            </Cards>
 
     )
     
