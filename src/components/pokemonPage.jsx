@@ -36,6 +36,7 @@ const PokemonPage = () => {
 
     const {selectedType, changeSelectedType} = useContext(PokemonContext)
 
+
     useEffect(() => {
         setPokemonsType(handlePokemonOptions())
     }, [])

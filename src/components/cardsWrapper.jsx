@@ -15,7 +15,9 @@ const CardsWrapper = () => {
 
                 pokemonList.pokemons.map((val) => {
                     if (val.type == selectedType) {
-                        return <PokemonCard name={val.name}
+                        return <PokemonCard
+                            key={val.name}
+                        name={val.name}
                         description={val.description}
                         type={selectedType}
                         hp={val.hp}

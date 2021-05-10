@@ -1,6 +1,7 @@
 import React, {useContext} from "react";
 import Styled from "styled-components"
 import PokemonContext from "../context"
+import pokemonList from "../utils/pokemon.json";
 
 const DropdownStyled = Styled.div`
     position: relative;
@@ -14,15 +15,23 @@ const DropdownStyled = Styled.div`
 const Dropdown = (props) => {
   const { label, selected, options, name, handleChange } = props;
 
-  // Segunda feira TPC ao mudar no dropdown seleccionar o primeiro pokemon do tipo ! 
+  // Segunda feira TPC ao mudar no dropdown seleccionar o primeiro pokemon do tipo !
   const {setOptionSelected} = useContext(PokemonContext);
-  
 
-  return (
+    function setFirstPokemon(value) {
+        for (let i = 0; i < pokemonList.pokemons.length; i++) {
+            if (pokemonList.pokemons[i].type === value) {
+                setOptionSelected(pokemonList.pokemons[i].name);
+                break;
+            }
+        }
+    }
+
+    return (
     <>
       <label><b>{label}:</b></label>
         <DropdownStyled >
-          <select name={name} value={selected} onChange={(event) => {handleChange(event.target.value); setOptionSelected(null) }} >
+          <select name={name} value={selected} onChange={(event) => {handleChange(event.target.value); setFirstPokemon(event.target.value)}} >
             {options.map((element, key) => <option key={key} value={element}>{element}</option>)}
           </select>
         </DropdownStyled>

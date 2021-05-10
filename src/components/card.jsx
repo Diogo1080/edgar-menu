@@ -8,7 +8,8 @@ const PokemonCard = (props) => {
     const {description, type, name, hp, attack, defense, spAttack, spDefense, speed, height, weight, imageURL} = props; 
     return (
     <>
-        <div onClick={() => setOptionSelected(name)}
+        <div onClick={() =>
+          optionSelected===name?setOptionSelected(null): setOptionSelected(name)}
             className={`pokemon-card ${type.toLowerCase()} ${ name === optionSelected ? 'selected': ''}`} 
             id="pokemon-card">
             <div className="pokemon-card-image-container">
