@@ -9,7 +9,7 @@ const PokemonDescription = (props) => {
 
     return (
         <>
-            {pokemonJson.pokemons.filter(pokemon => pokemon.name == optionSelected)[0]?.description}
+            {pokemonJson.pokemons.filter(pokemon => pokemon.name === optionSelected)[0]?.description + " hey you did it!"}
         </>
     )
 }

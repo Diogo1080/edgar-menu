@@ -46,7 +46,6 @@ const PokemonPage = () => {
             <Cards>
                 <Dropdown label="Pokemon List" selected={selectedType} options={pokemonsType} name="Pokemon Selector" handleChange={changeSelectedType}>
                 </Dropdown>
-               
                 
                 <CardsWrapper>
                 </CardsWrapper>
